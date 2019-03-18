@@ -56,23 +56,34 @@ class UnicodeWriter:
                         self.writerow(row)
 
 def unicode_csv_reader(unicode_csv_data, dialect=csv.excel, delimiter=',', **kwargs):
+    """
+    Function which takes in a csv line as input, and returns a unicode csv row object
+    """
     csv.field_size_limit(sys.maxsize)
     csv_reader = csv.reader(utf_8_encoder(unicode_csv_data),delimiter=delimiter, **kwargs)
     for row in csv_reader:
         yield [unicode(cell, 'utf-8') for cell in row]
 
 def utf_8_encoder(unicode_csv_data):
+    """
+    Docstring
+    """
     for line in unicode_csv_data:
         yield line.encode('utf-8')
 
 def add_header(unicode_csv_data, new_header):
+    """
+    Docstring
+    """
         final_iterator = [",".join(new_header)]
         for row in unicode_csv_data:
                 final_iterator.append(row)
         return iter(final_iterator)
 
 def toCSVLine(row):
-        # Given a list of strings, returns a properly csv formatted string
-        output = StringIO.StringIO("")
-        UnicodeWriter(output,quoting=csv.QUOTE_ALL).writerow(row)
-        return output.getvalue().strip()
+    """
+    Given a list of strings, returns a properly csv formatted string
+    """
+    output = StringIO.StringIO("")
+    UnicodeWriter(output,quoting=csv.QUOTE_ALL).writerow(row)
+    return output.getvalue().strip()
