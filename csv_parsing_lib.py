@@ -1,3 +1,5 @@
+#!/usr/bin/env python2
+
 """
 Classes and functions for parsing CSV's in PySpark RDDs
 """
