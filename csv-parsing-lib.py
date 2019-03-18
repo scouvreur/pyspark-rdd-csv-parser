@@ -1,16 +1,8 @@
 import csv
 import sys
-import argparse
-import json
-import os
-from pyspark import SparkContext
-import codecs, cStringIO
-import StringIO
-import time
-from datetime import datetime
-import re
+import codecs
+import cStringIO
 from sets import Set
-from random import randint
 
 class UTF8Recoder:
         """
