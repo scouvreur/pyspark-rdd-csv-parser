@@ -16,21 +16,12 @@ class UTF8Recoder:
     Iterator that reads an encoded stream and reencodes the input to UTF-8
     """
     def __init__(self, csv_file, encoding):
-        """
-        Docstring
-        """
         self.reader = codecs.getreader(encoding)(csv_file)
 
     def __iter__(self):
-        """
-        Docstring
-        """
         return self
 
     def next(self):
-        """
-        Docstring
-        """
         return self.reader.next().encode("utf-8")
 
 class UnicodeReader:
