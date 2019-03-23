@@ -94,7 +94,7 @@ def utf_8_encoder(unicode_csv_data):
 
 def add_header(unicode_csv_data, new_header):
     """
-    Docstring
+    Given row, return header with iterator
     """
     final_iterator = [",".join(new_header)]
     for row in unicode_csv_data:
