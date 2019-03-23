@@ -30,23 +30,14 @@ class UnicodeReader:
     which is encoded in the given encoding.
     """
     def __init__(self, csv_file, dialect=csv.excel, encoding="utf-8", **kwds):
-        """
-        Docstring
-        """
         csv_file = UTF8Recoder(csv_file, encoding)
         self.reader = csv.reader(csv_file, dialect=dialect, **kwds)
 
     def next(self):
-        """
-        Docstring
-        """
         row = self.reader.next()
         return [unicode(s, "utf-8") for s in row]
 
     def __iter__(self):
-        """
-        Docstring
-        """
         return self
 
 class UnicodeWriter:
