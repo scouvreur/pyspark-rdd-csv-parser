@@ -8,7 +8,9 @@ Knowledge of PySpark from a [course](https://github.com/andfanilo/pyspark-tutori
 
 - [`csv_parsing_lib.py`](csv_parsing_lib.py)
 
-
+```python
+import csv_parsing_lib
+```
 
 - [`col_validation.py`](col_validation.py)
 
